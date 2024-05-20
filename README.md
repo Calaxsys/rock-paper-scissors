@@ -1,1 +1,1 @@
-Building a console based Rock, Paper, Scissors game using JavaScript
+Building a web based Rock, Paper, Scissors game using JavaScript, HTML and CSS
