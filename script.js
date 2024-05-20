@@ -16,6 +16,7 @@ function getComputerChoice() {
     }
 }
 
+//Function to play a round, keep the score, and return winner
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return `Tie! You both picked ${humanChoice}.`
@@ -40,3 +41,34 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+//Selecting button elements from index.html
+const rockBtn = document.getElementById('rockButton');
+const paperBtn = document.getElementById('paperButton');
+const scissorsBtn = document.getElementById('scissorsButton');
+
+function playGame(pick) {
+    let computerChoice = getComputerChoice();
+
+    result.textContent = playRound(pick, computerChoice);
+    humanScore.textContent = "Human " + playerScore;
+    computerScore.textContent = "Computer " + computerScore;
+
+    if (humanScore == 5) {
+        result.textContent = "You Win the Game!";
+    } else if (computerScore == 5) {
+        result.textContent = "You Lost the Game!";
+    }
+}
+
+//Functionality for buttons to work
+rockBtn.addEventListener("click", function () {
+    playGame("rock");
+});
+
+paperBtn.addEventListener("click", function () {
+    playGame("paper");
+});
+
+scissorsBtn.addEventListener("click", function () {
+    playGame("scissors");
+})
