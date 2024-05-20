@@ -45,18 +45,29 @@ function playRound(humanChoice, computerChoice) {
 const rockBtn = document.getElementById('rockButton');
 const paperBtn = document.getElementById('paperButton');
 const scissorsBtn = document.getElementById('scissorsButton');
+const result = document.getElementById('result');
+const humanScoreDisplay = document.getElementById('humanScore');
+const computerScoreDisplay = document.getElementById('computerScore');
 
 function playGame(pick) {
     let computerChoice = getComputerChoice();
 
     result.textContent = playRound(pick, computerChoice);
-    humanScore.textContent = "Human " + playerScore;
-    computerScore.textContent = "Computer " + computerScore;
+    humanScoreDisplay.textContent = "Human " + humanScore;
+    computerScoreDisplay.textContent = "Computer " + computerScore;
 
     if (humanScore == 5) {
         result.textContent = "You Win the Game!";
+        result.textContent = "";
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
     } else if (computerScore == 5) {
         result.textContent = "You Lost the Game!";
+        result.textContent = "";
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
     }
 }
 
