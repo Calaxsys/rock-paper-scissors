@@ -53,18 +53,16 @@ function playGame(pick) {
     let computerChoice = getComputerChoice();
 
     result.textContent = playRound(pick, computerChoice);
-    humanScoreDisplay.textContent = "Human " + humanScore;
-    computerScoreDisplay.textContent = "Computer " + computerScore;
+    humanScoreDisplay.textContent = "Human: " + humanScore;
+    computerScoreDisplay.textContent = "Computer: " + computerScore;
 
     if (humanScore == 5) {
         result.textContent = "You Win the Game!";
-        result.textContent = "";
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
     } else if (computerScore == 5) {
-        result.textContent = "You Lost the Game!";
-        result.textContent = "";
+        result.textContent = "You Lost the Game!"; 
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
